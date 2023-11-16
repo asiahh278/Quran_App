@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "com.asiah.quranapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.asiah.quranapp"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -45,17 +45,17 @@ android {
 dependencies {
     // TODO 3: IMPLEMENT MOSHI LIBRARY(DON'T FORGET TO CHANGES KOTLIN OPTIONS)
     implementation("com.squareup.moshi:moshi:1.14.0")
-    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
+    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.14.0") // for KSP
     
     // TODO 4: IMPLEMENT NAVIGATION LIBRARY
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
 
-    // TODO 5: I
+    // TODO 5: IMPLEMENT RETROFIT FOR CONVERTER DATA & LOGGING INTERCEPTOR FOR HANDLING LOG
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
-
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
