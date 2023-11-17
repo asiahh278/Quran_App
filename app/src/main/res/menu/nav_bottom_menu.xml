@@ -12,7 +12,7 @@
         android:icon="@drawable/ic_doa"
         android:title="@string/doa" />
     <item
-        android:id="nav_quran"
+        android:id="@+id/nav_quran"
         android:icon="@drawable/logo_quran"
         android:title="@string/quran" />
 </menu>
