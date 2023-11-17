@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.QuranApp" parent="Base.Theme.QuranApp" />
+
+
+<!--TODO 17: ADD BACKGROUND THEME-->
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/rounded_corner</item>
+    </style>
 </resources>

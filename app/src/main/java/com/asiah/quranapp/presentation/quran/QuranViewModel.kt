@@ -11,7 +11,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-// TODO 14: MAKE MVP FOR
+// TODO 14: MAKE MVVM FOR BRIDGE OF BUSINESS LOGIC & UI
 class QuranViewModel: ViewModel() {
     private var _listSurah = MutableLiveData<SurahResponse>()
     val listSurah get() = _listSurah as LiveData<SurahResponse>

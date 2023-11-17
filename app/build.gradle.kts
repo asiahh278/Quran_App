@@ -1,8 +1,12 @@
 plugins {
     // TODO 1: ADD KSP PLUGIN
     id("com.google.devtools.ksp")
+
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+
+    // TODO 15: ADD PARCELABLE PLUGIN
+    id("kotlin-parcelize")
 }
 
 android {
@@ -11,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId = "com.asiah.quranapp"
-        minSdk = 24
+        minSdk = 33
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
