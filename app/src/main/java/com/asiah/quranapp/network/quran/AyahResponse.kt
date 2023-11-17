@@ -27,7 +27,7 @@ data class QuranEdition(
     val englishName: String? = null,
 
     @Json(name = "englishNameTranslation")
-    val englishNameTraslation: String? = null,
+    val englishNameTranslation: String? = null,
 
     @Json(name = "revelationType")
     val revelationType: String? = null,
@@ -50,6 +50,9 @@ data class AyahsItem(
     @Json(name = "hizbQuarter")
     val hizbQuarter: Int? = null,
 
+    @Json(name = "ruku")
+    val ruku: Int? = null,
+
     @Json(name = "manzil")
     val manzil: Int? = null,
 
@@ -69,7 +72,7 @@ data class AyahsItem(
     val juz: Int? = null,
 
     @Json(name = "audioSecondary")
-    val audioSecondary: String? = null,
+    val audioSecondary: List<String?>? = null,
 
     @Json(name = "audio")
     val audio: String? = null
@@ -80,8 +83,8 @@ data class Edition(
     @Json(name = "identifier")
     val identifier: String? = null,
 
-    @Json(name = "EnglishType")
-    val EnglishType: String? = null,
+    @Json(name = "englishType")
+    val englishType: String? = null,
 
     @Json(name = "name")
     val name: String? = null,

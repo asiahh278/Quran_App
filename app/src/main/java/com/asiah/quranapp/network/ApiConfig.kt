@@ -7,7 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 
-// TODO 10: MAKE PWERMISSSION FOR USE API
+// TODO 10: MAKE PERMISSION FOR USE API
 object ApiConfig {
     private inline fun <reified T> createService(baseUrl: String): T {
         val loggingInterceptor =
