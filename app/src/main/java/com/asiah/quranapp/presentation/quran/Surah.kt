@@ -9,6 +9,7 @@ data class Surah(
     val name: String? = null,
     val englishName: String? = null,
     val englishNameTranslation: String? = null,
-    val numberOfAyah: Int? = null,
+    val numberOfAyahs: Int? = null,
     val revelationType: String? = null
+
 ) : Parcelable
