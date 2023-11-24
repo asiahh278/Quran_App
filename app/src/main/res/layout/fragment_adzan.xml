@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:drawablePadding="8dp"
         android:textSize="18sp"
-        app:drawableStartCompat="ic_location"
+        app:drawableStartCompat="@drawable/ic_location"
         app:layout_constraintEnd_toStartOf="@+id/tc_time_local"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

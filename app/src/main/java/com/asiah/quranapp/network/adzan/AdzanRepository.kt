@@ -64,7 +64,7 @@ class AdzanRepository (
         val liveDataDailyAdzanTime = liveDataCityId.switchMap {
             val data = it.data?.get(0)?.id
             Log.i("Repository", "inside liveDataDailyAdzanTime: data id city is $data")
-            if (data != null) getResultDailyAdzanTime(data, year, month, date).asLiveData()
+            if (data != null) getDailyAdzanTime(data, year, month, date).asLiveData()
             else getDailyAdzanTime("1301", year, month, date).asLiveData()
         }
         val result = MediatorLiveData<Resource<AdzanDataResult>>()
@@ -83,7 +83,7 @@ class AdzanRepository (
 
     private fun combineLatestData(
         listLocationResult: LiveData<List<String>>,
-        listCityResult: LiveData<Resource<List<City>>,
+        dailyAdzanTimeResult: LiveData<Resource<List<DailyAdzan>>,
         listCalendarResult: List<String>
     ): Resource<AdzanDataResult> {
 
