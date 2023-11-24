@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.asiah.quranapp.ViewModelFactory
 import com.asiah.quranapp.adapter.QuranAdapter
 import com.asiah.quranapp.databinding.FragmentQuranBinding
 import com.asiah.quranapp.network.Resource
@@ -15,6 +17,7 @@ class QuranFragment : Fragment() {
     private var _binding : FragmentQuranBinding? = null
     private val binding get() = _binding as FragmentQuranBinding
 
+    private val quranViewModel: QuranViewModel by viewModels { ViewModelFactory(requireContext()) }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

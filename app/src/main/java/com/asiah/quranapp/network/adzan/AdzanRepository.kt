@@ -83,7 +83,7 @@ class AdzanRepository (
 
     private fun combineLatestData(
         listLocationResult: LiveData<List<String>>,
-        dailyAdzanTimeResult: LiveData<Resource<List<DailyAdzan>>,
+        dailyAdzanTimeResult: LiveData<Resource<DailyAdzan>>,
         listCalendarResult: List<String>
     ): Resource<AdzanDataResult> {
 
