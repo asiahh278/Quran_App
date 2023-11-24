@@ -5,10 +5,11 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class CityResponse(
-    @Json(na,
+    @Json(name = "data")
     val dataCity: List<CityItem>,
+
     @Json(name = "status")
-        val status: Boolean? = null
+    val status: Boolean? = null
 )
 
 @JsonClass(generateAdapter = true)

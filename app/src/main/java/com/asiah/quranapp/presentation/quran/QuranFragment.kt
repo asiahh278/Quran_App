@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.asiah.quranapp.adapter.QuranAdapter
 import com.asiah.quranapp.databinding.FragmentQuranBinding
+import com.asiah.quranapp.network.Resource
 
 class QuranFragment : Fragment() {
     private var _binding : FragmentQuranBinding? = null
@@ -19,7 +19,7 @@ class QuranFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentQuranBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -27,15 +27,34 @@ class QuranFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewModel = ViewModelProvider(this)[QuranViewModel::class.java]
-        viewModel.getListSurah()
+        quranViewModel.getListSurah().observe(viewLifecycleOwner) {
+            when (it) {
+                is Resource.Loading -> showLoading(true)
+                is Resource.Success -> {
+                    binding.rvQuran.apply {
+                        val mAdapter = QuranAdapter()
+                        mAdapter.setData(it.data)
+                        adapter = mAdapter
+                        layoutManager = LinearLayoutManager(context)
+                    }
+                    showLoading(false)
+                }
+                is Resource.Error -> {
+                    Toast.makeText(context, "Error ${it.message}", Toast.LENGTH_SHORT).show()
+                    showLoading(false)
+                }
+            }
+        }
+    }
 
-        viewModel.listSurah.observe(viewLifecycleOwner) {
-            binding.rvQuran.apply {
-                val mAdapter = QuranAdapter()
-                mAdapter.setData(it.listSurah)
-                adapter = mAdapter
-                layoutManager = LinearLayoutManager(context)
+    private fun showLoading(isLoading: Boolean) {
+        binding.apply {
+            if (isLoading) {
+                progressBar.visibility = View.VISIBLE
+                rvQuran.visibility = View.GONE
+            } else {
+                progressBar.visibility = View.GONE
+                rvQuran.visibility = View.VISIBLE
             }
         }
     }

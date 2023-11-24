@@ -1,9 +1,7 @@
 package com.asiah.quranapp.network.quran
 
-import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import kotlinx.parcelize.Parcelize
 
 // TODO 12: SETTING THE WHAT WE CALL THE DATA (ApiResponse)
 @JsonClass(generateAdapter = true)
@@ -18,9 +16,9 @@ data class SurahResponse(
     val status: String? = null
 )
 
-@Parcelize
 @JsonClass(generateAdapter = true)
 data class SurahItem(
+
     @Json(name = "number")
     val number: Int? = null,
 
@@ -38,4 +36,4 @@ data class SurahItem(
 
     @Json(name = "englishNameTranslation")
     val englishNameTranslation: String? = null
-): Parcelable
+)

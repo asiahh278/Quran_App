@@ -1,13 +1,15 @@
 package com.asiah.quranapp.utils
 
-
+import com.asiah.quranapp.network.adzan.City
+import com.asiah.quranapp.network.adzan.CityItem
+import com.asiah.quranapp.network.adzan.DailyAdzan
+import com.asiah.quranapp.network.adzan.JadwalItem
 import com.asiah.quranapp.network.quran.AyahsItem
 import com.asiah.quranapp.network.quran.QuranEditionItem
 import com.asiah.quranapp.network.quran.SurahItem
 import com.asiah.quranapp.presentation.quran.Ayah
 import com.asiah.quranapp.presentation.quran.QuranEdition
 import com.asiah.quranapp.presentation.quran.Surah
-
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 
@@ -21,7 +23,7 @@ object DataMapper {
                 name = it.name,
                 englishName = it.englishName,
                 englishNameTranslation = it.englishNameTranslation,
-                numberOfAyah = it.numberOfAyahs,
+                numberOfAyahs = it.numberOfAyahs,
                 revelationType = it.revelationType
             )
             listSurah.add(surah)
@@ -33,7 +35,7 @@ object DataMapper {
     fun mapResponseToDomain(input: List<QuranEditionItem>): Flow<List<QuranEdition>> {
         val listQuranEdition = ArrayList<QuranEdition>()
         input.map {
-            val surah = Surah(
+            val quranEdition = QuranEdition(
                 number = it.number,
                 name = it.name,
                 englishName = it.englishName,
@@ -76,5 +78,22 @@ object DataMapper {
             listCity.add(city)
         }
         return flowOf(listCity)
+    }
+
+    @JvmName("mapDailyResponseToDomain")
+    fun mapResponseToDomain(input: JadwalItem): Flow<DailyAdzan> {
+        val dailyAdzan = DailyAdzan(
+            date = input.date,
+            imsak = input.imsak,
+            isya = input.isya,
+            dzuhur = input.dzuhur,
+            subuh = input.subuh,
+            dhuha = input.dhuha,
+            terbit = input.terbit,
+            tanggal = input.tanggal,
+            ashar = input.ashar,
+            maghrib = input.maghrib
+        )
+        return flowOf(dailyAdzan)
     }
 }
