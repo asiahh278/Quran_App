@@ -121,7 +121,7 @@
                 android:layout_marginTop="4dp"
                 android:background="@color/surface_container"
                 app:layout_constraintEnd_toStartOf="@id/guide_end"
-                app:constraintSet="@id/guide_start"
+                app:layout_constraintStart_toEndOf="@id/guide_start"
                 app:layout_constraintTop_toBottomOf="@id/tv_imsak" />
 
             <TextView
@@ -152,7 +152,7 @@
                 android:layout_marginTop="4dp"
                 android:background="@color/surface_container"
                 app:layout_constraintEnd_toStartOf="@id/guide_end"
-                app:constraintSet="@id/guide_start"
+                app:layout_constraintStart_toEndOf="@id/guide_start"
                 app:layout_constraintTop_toBottomOf="@id/tv_time_subuh" />
 
             <TextView
@@ -214,7 +214,7 @@
                 android:layout_marginTop="4dp"
                 android:background="@color/surface_container"
                 app:layout_constraintEnd_toStartOf="@id/guide_end"
-                app:constraintSet="@id/guide_start"
+                app:layout_constraintStart_toEndOf="@id/guide_start"
                 app:layout_constraintTop_toBottomOf="@id/tv_ashar" />
 
             <TextView
@@ -245,7 +245,7 @@
                 android:layout_marginTop="4dp"
                 android:background="@color/surface_container"
                 app:layout_constraintEnd_toStartOf="@id/guide_end"
-                app:constraintSet="@id/guide_start"
+                app:layout_constraintStart_toEndOf="@id/guide_start"
                 app:layout_constraintTop_toBottomOf="@id/tv_maghrib"/>
 
             <TextView

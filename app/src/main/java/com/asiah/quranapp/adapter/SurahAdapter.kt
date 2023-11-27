@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.asiah.quranapp.databinding.ItemAyahBinding
-import com.asiah.quranapp.network.quran.AyahsItem
 import com.asiah.quranapp.presentation.quran.Ayah
 import com.asiah.quranapp.presentation.quran.QuranEdition
 
@@ -45,7 +44,7 @@ class SurahAdapter : RecyclerView.Adapter<SurahAdapter.MyViewHolder>() {
         holder.binding.apply {
             tvItemNumberAyah.text = listAyah.numberInSurah.toString()
             tvItemAyah.text = listAyah.text
-            tvItemTranslation.text = quranTranslationIndo?.text
+            tvItemTranslation.text = quranTranslationIndo.text
             this.root.setOnClickListener{
                 onItemClickCallback?.onItemClicked(quranAudio)
             }
